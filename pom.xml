@@ -17,7 +17,6 @@
         <build-helper-maven-plugin.version>3.1.0</build-helper-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-        <maven-failsafe-plugin.version>3.0.0-M4</maven-failsafe-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <maven-surefire-report-plugin.version>3.0.0-M4</maven-surefire-report-plugin.version>
         <groovy-eclipse-compiler.version>3.6.0-03</groovy-eclipse-compiler.version>
@@ -25,9 +24,6 @@
 
         <groovy.version>2.5.11</groovy.version>
         <spock.version>2.0-M2-groovy-2.5</spock.version>
-
-        <skipTests>false</skipTests>
-        <skipUTs>${skipTests}</skipUTs>
 
     </properties>
 
@@ -68,10 +64,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <argLine>
-                    </argLine>
-                </configuration>
                 <executions>
                     <execution>
                         <id>default-test</id>
@@ -85,9 +77,6 @@
                                 <include>**/*Spec.class</include>
                                 <include>**/*Should.class</include>
                             </includes>
-                            <failIfNoTests>false</failIfNoTests>
-                            <skipTests>${skipUTs}</skipTests>
-                            <argLine>${surefireArgLine}</argLine>
                         </configuration>
                     </execution>
                 </executions>
