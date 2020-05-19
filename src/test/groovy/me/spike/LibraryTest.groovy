@@ -1,6 +1,8 @@
 package me.spike
 
 import spock.lang.Specification
+import com.fasterxml.jackson.databind.ObjectMapper
+
 
 class LibraryTest extends Specification {
 
